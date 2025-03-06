@@ -1,21 +1,33 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user.photoURL)
     const navLinks = <>
         <li>
             <NavLink to={'/'}>Home</NavLink>
         </li>
         <li>
             <NavLink to={'/'}>All Sports Equipment</NavLink>
-        </li>
-        <li>
+        </li><li>
             <NavLink to={'/add-equipment'}>Add Equipment</NavLink>
         </li>
         <li>
             <NavLink to={'/'}>My Equipment List</NavLink>
         </li>
-
     </>
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log('User logout')
+            })
+            .catch(error => {
+                console.log(error.code)
+            })
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -39,15 +51,26 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                       {
-                        navLinks
-                       }
+                        {
+                            navLinks
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end gap-10">
-                    <button className="px-8 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Login</Link></button>
+                    {
+                        user ? <p>{user.displayName}</p> : ''
+                    }
+                    {
+                        user ? <img className="w-15 h-15 object-cover rounded-full" src={user.photoURL} alt="" /> : ''
+                    }
+                    {
+                        user ? <button onClick={handleLogOut} className="px-8 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Log out</Link></button>
+                            : <button className="px-8 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Login</Link></button>
+
+                    }
                     {/* THEME CONTROLLER */}
                     <label className="swap swap-rotate">
+
                         {/* this hidden checkbox controls the state */}
                         <input type="checkbox" className="theme-controller" value="dark" />
 
