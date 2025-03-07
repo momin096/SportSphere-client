@@ -46,6 +46,11 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
+                toast.success('Login Successfully', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    draggable: false,
+                });
                 setUser(result.user);
                 navigate(location?.state ? location.state : '/')
             })

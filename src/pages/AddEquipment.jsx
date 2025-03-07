@@ -81,7 +81,7 @@ const AddEquipment = () => {
                     </div>
                     <div>
                         <label className="fieldset-label text-xl text-base-content  mb-1 font-semibold">Rating</label>
-                        <input name="rating" type="number" className="input w-full text-xl py-6 " required placeholder="Rating" />
+                        <input name="rating" type="text" className="input w-full text-xl py-6 " placeholder="Rating" />
                     </div>
                     <div>
                         <label className="fieldset-label text-xl text-base-content  mb-1 font-semibold">Customization </label>
