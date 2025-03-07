@@ -44,10 +44,10 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className=" text-3xl flex gap-2 items-center">
+                    <Link to={'/'} className=" text-3xl flex gap-2 items-center">
                         <img className="w-10" src="/public/physical.png" alt="" />
-                        <span className="text-blue-500">Sport</span><span className="text-orange-500">Sphere</span>
-                    </a>
+                        <p className="font-medium"><span className="text-blue-500">Sport</span> <span className="text-orange-500">Sphere</span></p>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -57,9 +57,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-10">
-                    {
-                        user ? <p>{user.displayName}</p> : ''
-                    }
+
                     {
                         user ? <img className="w-15 h-15 object-cover rounded-full" src={user.photoURL} alt="" /> : ''
                     }

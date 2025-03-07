@@ -3,14 +3,21 @@ import { AuthContext } from "../provider/AuthProvider";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
-import { GoogleAuthProvider } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
     const { createUserWithEmail, updateUserProfile, setUser, setLoading, signInWithGoogle } = useContext(AuthContext);
 
     const [pass, setPass] = useState(false);
+    const [error, setError] = useState('')
     const navigate = useNavigate();
+
+    const notify = (message) => toast.success(message, {
+        position: "top-center",
+        autoClose: 2000,
+        draggable: false,
+    });
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,7 +27,12 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password)
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!regex.test(password)) {
+            setError('One uppercase one lowercase at least 6 character')
+            return;
+        }
 
         const updateInfo = { displayName: name, photoURL: photo }
 
@@ -29,6 +41,7 @@ const Register = () => {
                 setUser(result.user)
                 updateUserProfile(updateInfo)
                     .then(() => {
+                        notify("Account create successfully")
                         navigate('/')
                     })
             })
@@ -37,11 +50,12 @@ const Register = () => {
             })
     }
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then(result =>{
-            setUser(result.user);
-        })
+            .then(result => {
+                setUser(result.user);
+                notify("Account create successfully")
+            })
     }
 
     const handleShowPassword = () => {
@@ -75,7 +89,9 @@ const Register = () => {
                             </button>
                         </label>
                     </div>
-
+                    {
+                        error && <p className="text-red-500 text-base">{error}</p>
+                    }
 
                     <button className="w-full mt-5">
                         <input type="submit" className="border border-orange-500   hover:bg-orange-400   text-base-content w-full text-xl py-2 rounded-lg font-semibold " value={'Register'} />

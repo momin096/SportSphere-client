@@ -4,11 +4,13 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
-    const { signInWithEmail, signInWithGoogle ,setUser } = useContext(AuthContext);
+    const { signInWithEmail, signInWithGoogle, setUser } = useContext(AuthContext);
 
     const [pass, setPass] = useState(false);
+    const [error, setError] = useState('');
 
     const location = useLocation()
 
@@ -21,22 +23,39 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        signInWithEmail(email, password) 
-        .then(result =>{
-            setUser(result.user)
-            navigate(location?.state ? location.state : '/')
-            
-        })
-        .catch(error =>{
-            console.log(error.code)
-        })
+        signInWithEmail(email, password)
+            .then(result => {
+                setUser(result.user);
+                toast.success('Login success', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    draggable: false,
+                });
+                navigate(location?.state ? location.state : '/')
+
+            })
+            .catch(error => {
+                toast.error(error.code, {
+                    position: "top-center",
+                    autoClose: 2000,
+                    draggable: false,
+                });
+            })
     }
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then(result =>{
-            setUser(result.user);
-        })
+            .then(result => {
+                setUser(result.user);
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error =>{
+                toast.error(error.code, {
+                    position: "top-center",
+                    autoClose: 2000,
+                    draggable: false,
+                });
+            })
     }
 
     const handleShowPassword = () => {
@@ -56,7 +75,7 @@ const Login = () => {
                         <label className="fieldset-label text-xl text-base-content  mb-1 font-semibold">Password</label>
                         <label className="input w-full text-xl py-2">
                             <input name="password" type={`${pass ? 'text' : 'password'}`} className="py-6" placeholder="Enter your password" />
-                            <button className="border" onClick={handleShowPassword}>
+                            <button className="" onClick={handleShowPassword}>
                                 {
                                     pass ? <FaRegEyeSlash className="text-2xl cursor-pointer" /> : <FaRegEye className="text-2xl cursor-pointer" />
                                 }
@@ -66,12 +85,14 @@ const Login = () => {
                     {/* ------------------- */}
 
                     <div className="py-2 cursor-pointer text-base"><a className=" link-hover justify-start">Forgot password?</a></div>
-
+                    {
+                        error && <p className="text-red-500">{error}</p>
+                    }
                     <button className="w-full mt-5">
                         <input type="submit" className="border border-orange-500   hover:bg-orange-400   text-base-content w-full text-xl py-2 rounded-lg font-semibold " value={'Login'} />
                     </button>
 
-                <p className="text-base py-3">Don't have an account ? <Link to={'/register'} className="font-bold hover:underline cursor-pointer hover:text-red-700  ">Register</Link></p>
+                    <p className="text-base py-3">Don't have an account ? <Link to={'/register'} className="font-bold hover:underline cursor-pointer hover:text-red-700  ">Register</Link></p>
                 </fieldset>
             </form>
             <div className="flex items-center justify-center">
