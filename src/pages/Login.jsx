@@ -74,12 +74,12 @@ const Login = () => {
                 <fieldset className="fieldset flex flex-col items-center justify-center ">
                     <div className="w-full">
                         <label className="fieldset-label text-xl text-base-content  mb-1 font-semibold">Email</label>
-                        <input name="email" type="email" className="input w-full text-xl py-6 " placeholder="Enter your email" />
+                        <input name="email" type="email" className="input w-full text-xl py-6 " placeholder="Enter your email" required />
                     </div>
                     <div className="w-full">
                         <label className="fieldset-label text-xl text-base-content  mb-1 font-semibold">Password</label>
                         <label className="input w-full text-xl py-2">
-                            <input name="password" type={`${pass ? 'text' : 'password'}`} className="py-6" placeholder="Enter your password" />
+                            <input name="password" type={`${pass ? 'text' : 'password'}`} className="py-6" placeholder="Enter your password" required />
                             <button className="" onClick={handleShowPassword}>
                                 {
                                     pass ? <FaRegEyeSlash className="text-2xl cursor-pointer" /> : <FaRegEye className="text-2xl cursor-pointer" />

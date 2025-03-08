@@ -4,7 +4,7 @@ const ProductDetails = () => {
     const product = useLoaderData();
     const { item_name, price, photo, rating, customize, delivery_time, quantity, description } = product;
     return (
-        <div className="container mx-auto shadow-xl bg-base-100 min-h-[calc(100vh-200px)] mt-5">
+        <div className="container mx-auto shadow-2xl bg-base-100 min-h-[calc(100vh-200px)] mt-5 rounded-2xl">
             <div className="card lg:card-side gap-20">
                 <figure className="w-2/5">
                     <img

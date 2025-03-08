@@ -10,12 +10,12 @@ const Navbar = () => {
             <NavLink to={'/'}>Home</NavLink>
         </li>
         <li>
-            <NavLink to={'/'}>All Sports Equipment</NavLink>
+            <NavLink to={'/all-products'}>All Sports Equipment</NavLink>
         </li><li>
             <NavLink to={'/add-equipment'}>Add Equipment</NavLink>
         </li>
         <li>
-            <NavLink to={'/'}>My Equipment List</NavLink>
+            <NavLink to={'/my-products'}>My Equipment List</NavLink>
         </li>
     </>
 
