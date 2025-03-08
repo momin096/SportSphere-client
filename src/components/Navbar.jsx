@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -59,11 +60,18 @@ const Navbar = () => {
                 <div className="navbar-end gap-10">
 
                     {
-                        user ? <img className="w-15 h-15 object-cover rounded-full" src={user.photoURL} alt="" /> : ''
+                        user ? <img  id="profile" data-tooltip-delay-hide={300} className="w-15 h-15 object-cover rounded-full" src={user.photoURL} alt="" /> : ''
                     }
                     {
-                        user ? <button onClick={handleLogOut} className="px-8 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Log out</Link></button>
-                            : <button className="px-8 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Login</Link></button>
+                        user ? <Tooltip anchorSelect="#profile"  className="z-50 flex flex-col items-center ">
+                            <img className="w-25 rounded-lg" src={user.photoURL} alt="" />
+                            <p className="max-w-xs">{user.photoURL}</p>
+                            <h2 className="text-xl my-5">{user.displayName}</h2>
+                        </Tooltip> : ''
+                    }
+                    {
+                        user ? <button onClick={handleLogOut} className="px-5 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Log out</Link></button>
+                            : <button className="px-5 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Login</Link></button>
 
                     }
                     {/* THEME CONTROLLER */}
