@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from '../components/ProductCard';
 import { Link, useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer';
+import Slider from '../components/Slider';
 
 const Home = () => {
     const products = useLoaderData();
@@ -9,8 +10,12 @@ const Home = () => {
 
     return (
         <div>
-          // Container
+          {/* // Container */}
             <div className='container mx-auto'>
+                {/* SLIDER */}
+                <div>
+                    <Slider />
+                </div>
 
                 {/* Featured Products */}
                 <section>

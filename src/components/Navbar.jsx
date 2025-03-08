@@ -65,7 +65,7 @@ const Navbar = () => {
                     {
                         user ? <Tooltip anchorSelect="#profile"  className="z-50 flex flex-col items-center ">
                             <img className="w-25 rounded-lg" src={user.photoURL} alt="" />
-                            <p className="max-w-xs">{user.photoURL}</p>
+                            <p className="">{user.photoURL}</p>
                             <h2 className="text-xl my-5">{user.displayName}</h2>
                         </Tooltip> : ''
                     }
