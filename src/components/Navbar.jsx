@@ -2,10 +2,21 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from 'react-tooltip';
+import { toast } from "react-toastify";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    // console.log(user.photoURL)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success('Login Successfully', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    draggable: false,
+                });
+            })
+
+    }
     const navLinks = <>
         <li>
             <NavLink to={'/'}>Home</NavLink>
@@ -18,17 +29,14 @@ const Navbar = () => {
         <li>
             <NavLink to={'/my-products'}>My Equipment List</NavLink>
         </li>
+
+        {
+            user ? <li onClick={handleLogOut} ><Link to={'/login'} >Log out</Link></li>
+                : <li><Link to={'/login'} >Login</Link></li>
+        }
     </>
 
-    const handleLogOut = () => {
-        logOut()
-            .then(() => {
-                console.log('User logout')
-            })
-            .catch(error => {
-                console.log(error.code)
-            })
-    }
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -45,9 +53,9 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <Link to={'/'} className=" text-3xl flex gap-2 items-center">
-                        <img className="w-10" src="/public/physical.png" alt="" />
-                        <p className="font-medium"><span className="text-blue-500">Sport</span> <span className="text-orange-500">Sphere</span></p>
+                    <Link to={'/'} className="text-xl lg:text-3xl flex gap-2 items-center">
+                        <img className="w-7 lg:w-10" src="/public/physical.png" alt="" />
+                        <p className="font-medium flex gap-1"><span className="text-blue-500">Sport</span> <span className="text-orange-500">Sphere</span></p>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -60,18 +68,18 @@ const Navbar = () => {
                 <div className="navbar-end gap-10">
 
                     {
-                        user ? <img  id="profile" data-tooltip-delay-hide={300} className="w-15 h-15 object-cover rounded-full" src={user.photoURL} alt="" /> : ''
+                        user ? <img id="profile" data-tooltip-delay-hide={300} className="w-15 h-15 object-cover rounded-full" src={user.photoURL} alt="" /> : ''
                     }
                     {
-                        user ? <Tooltip anchorSelect="#profile"  className="z-50 flex flex-col items-center ">
+                        user ? <Tooltip anchorSelect="#profile" className="z-50 flex flex-col items-center ">
                             <img className="w-25 rounded-lg" src={user.photoURL} alt="" />
                             <p className="">{user.photoURL}</p>
                             <h2 className="text-xl my-5">{user.displayName}</h2>
                         </Tooltip> : ''
                     }
                     {
-                        user ? <button onClick={handleLogOut} className="px-5 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Log out</Link></button>
-                            : <button className="px-5 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm"><Link to={'/login'} >Login</Link></button>
+                        user ? <button onClick={handleLogOut} className="px-5 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm hidden lg:block"><Link to={'/login'} >Log out</Link></button>
+                            : <button className="px-5 py-1 border border-orange-500 hover:bg-gray-400/30 hover:border-white text-2xl rounded-sm hidden lg:block"><Link to={'/login'} >Login</Link></button>
 
                     }
                     {/* THEME CONTROLLER */}

@@ -6,7 +6,6 @@ const Error = () => {
             <Navbar />
             <div className="flex justify-center items-center">
                 <img className=" h-[calc(100vh-100px)]" src="/error.png" alt="" />
-
             </div>
         </div>
     );

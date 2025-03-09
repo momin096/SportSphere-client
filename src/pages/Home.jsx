@@ -18,14 +18,14 @@ const Home = () => {
                 </div>
 
                 {/* Featured Products */}
-                <section>
-                    <h1 className='text-5xl font-semibold text-center my-5'>Featured Products</h1>
-                    <div className='grid grid-cols-3 gap-5'>
+                <section className='p-5'>
+                    <h1 className='text-3xl lg:text-5xl font-semibold text-center my-10'>Featured Products</h1>
+                    <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 items-center justify-center'>
                         {
                             newProducts.map((product, idx) => <ProductCard key={idx} product={product} />)
                         }
                     </div>
-                    <div className='flex justify-center'>
+                    <div className='flex justify-center my-10'>
                         <Link to={'/all-products'} className='px-8 border py-2 font-medium hover:rounded-4xl border-orange-500 '>View All</Link>
                     </div>
                 </section>

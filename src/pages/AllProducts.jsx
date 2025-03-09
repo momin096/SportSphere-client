@@ -21,7 +21,6 @@ const AllProducts = () => {
                     sortedProducts.map((product, idx) => <ProductCard key={idx} product={product} />)
                 }
             </div>
-
         </div>
     );
 };
