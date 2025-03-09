@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
     const { _id, photo, item_name, price, rating, quantity, category } = product;
     return (
-        <Slide direction="left">
+        <Slide direction="left" duration={400}>
             <div className="card bg-base-200 w-96 md:w-auto flex ">
                 <figure className="px-5 pt-10 hover:scale-110 transition delay-75 duration-300 w-80 mx-auto h-80">
                     <img

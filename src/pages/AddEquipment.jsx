@@ -61,7 +61,7 @@ const AddEquipment = () => {
 
     }
     return (
-        <Slide direction="up">
+        <Slide direction="down" >
             <div className="container mx-auto bg-base-200 p-5 lg:py-10 lg:px-20 mt-10">
                 <h1 className="text-5xl text-center mb-5 font-medium">Add a product</h1>
                 <form onSubmit={handleAddProduct}>
