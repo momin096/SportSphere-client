@@ -1,12 +1,23 @@
-# React + Vite
+# SportSphere
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SportSphere is designed to help sports enthusiasts and athletes buy high-quality sports equipment online. Users can explore a wide range of products, view detailed descriptions, and securely place orders.
 
-Currently, two official plugins are available:
+# 🚀 Key Features
+- 🏀 Product Listings: Browse various sports equipment with detailed information.
+- 🔐 User Authentication: Secure login and signup functionality.
+- 🌙 Dark Mode Support: Toggle between light and dark mode for better user experience.
+- 📱 Responsive Design: Fully optimized for mobile, tablet, and desktop views.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🛠️ Technologies Used
+- Frontend: React.js, React Router, Tailwind CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: Firebase Authentication
+- Hosting: Firebase Hosting
 
-## Expanding the ESLint configuration
+# Live Site 
+- https://sport-sphere-acb69.web.app/
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 
+
+💡 Developed by Momin
