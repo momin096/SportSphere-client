@@ -1,8 +1,9 @@
 import { TbShoppingBagEdit } from "react-icons/tb";
 import { MdDeleteSweep } from "react-icons/md";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const MyProduct = ({ product, setProducts ,products }) => {
+const MyProduct = ({ product, setProducts, products }) => {
     const { _id, item_name, price, photo, category, rating, quantity } = product;
 
     const handleDelete = () => {
@@ -62,8 +63,10 @@ const MyProduct = ({ product, setProducts ,products }) => {
             </td>
             <td>{quantity} Pcs</td>
             <th className="space-x-1">
-                <button title="Edit" className="text-2xl text-blue-500 hover:bg-blue-300 p-2 rounded-lg hover:text-black ">
-                    <TbShoppingBagEdit />
+                <button className="text-2xl text-blue-500 hover:bg-blue-300 p-2 rounded-lg hover:text-black ">
+                    <Link to={`/update-product/${_id}`} title="Edit" >
+                        <TbShoppingBagEdit />
+                    </Link>
                 </button>
                 <button onClick={handleDelete} title="Delete" className="text-2xl text-red-500 hover:bg-red-500 p-2 rounded-lg hover:text-white ">
                     <MdDeleteSweep />

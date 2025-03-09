@@ -40,7 +40,7 @@ const MyProducts = () => {
                     </thead>
                     <tbody>
                         {
-                            products.map((product) => <MyProduct product={product} setProducts={setProducts} products={products} />)
+                            products.map((product, idx) => <MyProduct key={idx} product={product} setProducts={setProducts} products={products} />)
                         }
                     </tbody>
 
