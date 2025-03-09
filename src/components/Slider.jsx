@@ -23,7 +23,7 @@ const Slider = () => {
                 {/* Slide 1 */}
                 <SwiperSlide className="">
                     <div className="flex flex-col lg:flex-row items-center justify-center h-full px-5">
-                        <img className="lg:w-3xl" src="https://i.ibb.co.com/xK5vMB9X/11345217.png" alt="Slide 1" />
+                        <img className="lg:w-xl xl:w-3xl" src="https://i.ibb.co.com/xK5vMB9X/11345217.png" alt="Slide 1" />
                         <div className="space-y-5 text-center lg:text-left">
                             <h3 className="text-3xl lg:text-5xl font-semibold ">⚽ Unleash Your Inner Athlete</h3>
                             <p className="text-base lg:text-xl">Get top-quality gear for football, basketball, cricket, and more. Play harder, perform better, and reach new heights!</p>
@@ -48,9 +48,10 @@ const Slider = () => {
                         </div>
                     </div>
                 </SwiperSlide>
+                {/* slide 3 */}
                 <SwiperSlide className="">
                     <div className="flex flex-col lg:flex-row items-center justify-center h-full text-center lg:text-left">
-                        <img className="lg:w-3xl" src="https://i.ibb.co.com/xK5vMB9X/11345217.png" alt="Slide 1" />
+                        <img className="lg:w-xl xl:w-3xl" src="https://i.ibb.co.com/xK5vMB9X/11345217.png" alt="Slide 1" />
                         <div className="space-y-5">
                             <h3 className="text-3xl lg:text-5xl font-semibold">🎯 Your Game, Your Rules</h3>
                             <p className="text-base lg:text-xl">Choose from a wide range of sports essentials tailored to your needs. Shop now and take your skills to the next level!</p>

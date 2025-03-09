@@ -31,8 +31,8 @@ const Navbar = () => {
         </li>
 
         {
-            user ? <li onClick={handleLogOut} ><Link to={'/login'} >Log out</Link></li>
-                : <li><Link to={'/login'} >Login</Link></li>
+            user ? <li className="lg:hidden" onClick={handleLogOut} ><Link to={'/login'} >Log out</Link></li>
+                : <li className="lg:hidden"><Link to={'/login'} >Login</Link></li>
         }
     </>
 
@@ -42,7 +42,7 @@ const Navbar = () => {
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                         </div>
                         <ul
@@ -58,7 +58,7 @@ const Navbar = () => {
                         <p className="font-medium flex gap-1"><span className="text-blue-500">Sport</span> <span className="text-orange-500">Sphere</span></p>
                     </Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden xl:flex">
                     <ul className="menu menu-horizontal px-1">
                         {
                             navLinks
