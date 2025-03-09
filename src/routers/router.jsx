@@ -20,14 +20,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/all-products')
+        loader: () => fetch('https://sport-sphere-server.vercel.app/all-products')
       },
       {
         path: '/product/:id',
         element: <PrivateRoute>
           <ProductDetails />
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/all-products/${params.id}`)
+        loader: ({ params }) => fetch(`https://sport-sphere-server.vercel.app/all-products/${params.id}`)
       },
       {
         path: '/add-equipment',
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: '/all-products',
         element: <AllProducts />,
-        loader: () => fetch('http://localhost:5000/all-products')
+        loader: () => fetch('https://sport-sphere-server.vercel.app/all-products')
       },
       {
         path: '/my-products',
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <UpdateProduct />
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/my-products/${params.id}`)
+        loader: ({ params }) => fetch(`https://sport-sphere-server.vercel.app/my-products/${params.id}`)
       }
     ]
   },

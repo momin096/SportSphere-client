@@ -12,7 +12,7 @@ const MyProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/my-products?email=${user?.email}`);
+                const response = await fetch(`https://sport-sphere-server.vercel.app/my-products?email=${user?.email}`);
                 const data = await response.json();
                 setProducts(data);
 

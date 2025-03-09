@@ -25,12 +25,11 @@ const AddEquipment = () => {
         const name = user.displayName;
 
 
-        // console.log(item_name, price, photo, category, rating, customize, delivery_time, quantity, description);
 
         const newProduct = { email, name, item_name, price, photo, category, rating, customize, delivery_time, quantity, description };
 
         // send data to server 
-        fetch('http://localhost:5000/all-products', {
+        fetch('https://sport-sphere-server.vercel.app/all-products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,8 +44,7 @@ const AddEquipment = () => {
                         icon: "success",
                         draggable: true
                     });
-                    // form.reset();
-                    // navigate('/my-products')
+                    form.reset();
                 }
             })
 

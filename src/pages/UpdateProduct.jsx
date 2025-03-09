@@ -34,7 +34,7 @@ const UpdateProduct = () => {
             description,
         };
 
-        fetch(`http://localhost:5000/my-products/${_id}`, {
+        fetch(`https://sport-sphere-server.vercel.app/my-products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -43,7 +43,6 @@ const UpdateProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Product Updated Successfully",

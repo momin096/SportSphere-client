@@ -20,7 +20,7 @@ const MyProduct = ({ product, setProducts, products }) => {
 
 
                 // delete from the database
-                fetch(`http://localhost:5000/my-products/${_id}`, {
+                fetch(`https://sport-sphere-server.vercel.app/my-products/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
