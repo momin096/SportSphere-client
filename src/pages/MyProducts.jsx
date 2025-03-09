@@ -27,7 +27,7 @@ const MyProducts = () => {
 
     return (
         <div className="container mx-auto">
-            <h2 className="text-2xl lg:text-5xl text-center font-semibold my-10"><span className="text-orange-500">{user.displayName}'s</span> Products</h2>
+            <h2 className="text-2xl lg:text-5xl text-center font-semibold my-10"><span className="text-orange-500">{user.displayName}'s</span> Products <span className="text-blue-500">({products.length})</span></h2>
             <Slide>
                 <div className="overflow-x-auto">
                     <table className="table">

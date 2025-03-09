@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
     const { _id, photo, item_name, price, rating, quantity, category } = product;
     return (
-        <Slide direction="up">
+        <Slide direction="left">
             <div className="card bg-base-200 w-96 md:w-auto flex ">
-                <figure className="px-10 pt-10 hover:scale-120 transition delay-75 duration-300 ">
+                <figure className="px-5 pt-10 hover:scale-110 transition delay-75 duration-300 w-80 mx-auto h-80">
                     <img
                         src={photo}
                         alt="Shoes"
-                        className="rounded-xl" />
+                        className="rounded-xl  w-full h-full object-cover" />
                 </figure>
                 <div className="card-body ">
                     <h2 className="card-title">{item_name}</h2>

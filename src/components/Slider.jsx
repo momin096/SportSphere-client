@@ -12,7 +12,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Slider = () => {
     return (
-        <div >
+        <div className="">
             <Swiper
                 slidesPerView={1}
                 spaceBetween={10}
@@ -22,12 +22,12 @@ const Slider = () => {
                 className="mySwiper"
             >
                 {/* Slide 1 */}
-                <SwiperSlide className="">
+                <SwiperSlide className="min-h-[calc(100vh-350px)]">
                     <div className="flex flex-col lg:flex-row items-center justify-center h-full px-5">
                         <Slide direction="down">
                             <img className="lg:w-xl xl:w-3xl" src="https://i.ibb.co.com/xK5vMB9X/11345217.png" alt="Slide 1" />
                         </Slide>
-                        <div className="space-y-5 text-center lg:text-left">
+                        <div className="space-y-5 lg:space-y-10 text-center lg:text-left">
                             <Slide direction="right">
                                 <h3 className="text-3xl lg:text-5xl font-semibold ">⚽ Unleash Your Inner Athlete</h3>
                             </Slide>
@@ -46,7 +46,7 @@ const Slider = () => {
                         <Slide direction="up" className="lg:w-3xl">
                             <img className=" w-full" src="https://i.ibb.co.com/RGBvtHV9/fashion-shoes-sneakers.png" alt="Slide 1" />
                         </Slide >
-                        <div className="space-y-5">
+                        <div className="space-y-5 lg:space-y-10">
                             <Slide direction="down">
                                 <h3 className="text-3xl lg:text-5xl font-semibold">🚴‍♂️ Push Your Limits</h3>
                             </Slide>
@@ -66,7 +66,7 @@ const Slider = () => {
                         <Slide direction="down">
                             <img className="lg:w-xl xl:w-3xl" src="https://i.ibb.co.com/xK5vMB9X/11345217.png" alt="Slide 1" />
                         </Slide>
-                        <div className="space-y-5">
+                        <div className="space-y-5 lg:space-y-10">
                             <Slide direction="right">
                                 <h3 className="text-3xl lg:text-5xl font-semibold">🎯 Your Game, Your Rules</h3>
                             </Slide>
