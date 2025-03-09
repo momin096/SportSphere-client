@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
 
 const AddEquipment = () => {
     const { user } = useContext(AuthContext);
-
+    const navigate = useNavigate();
     const handleAddProduct = (e) => {
         e.preventDefault();
 
@@ -44,7 +45,8 @@ const AddEquipment = () => {
                         icon: "success",
                         draggable: true
                     });
-                    form.reset()
+                    form.reset();
+                    navigate('/my-products')
                 }
             })
 
