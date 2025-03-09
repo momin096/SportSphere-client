@@ -26,7 +26,18 @@ const AddEquipment = () => {
 
 
 
-        const newProduct = { email, name, item_name, price, photo, category, rating, customize, delivery_time, quantity, description };
+        const newProduct = {
+            email,
+            name,
+            item_name,
+            price, photo,
+            category,
+            rating,
+            customize,
+            delivery_time,
+            quantity,
+            description
+        };
 
         // send data to server 
         fetch('https://sport-sphere-server.vercel.app/all-products', {
