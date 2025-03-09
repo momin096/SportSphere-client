@@ -57,11 +57,11 @@ const MyProduct = ({ product, setProducts, products }) => {
                     </div>
                 </div>
             </td>
-            <td>
+            <td className="hidden md:inline-block">
                 <span>{category}</span> <br />
                 <span>Rating: {rating}</span>
             </td>
-            <td>{quantity} Pcs</td>
+            <td className="hidden md:inline-block">{quantity} Pcs</td>
             <th className="space-x-1">
                 <button className="text-2xl text-blue-500 hover:bg-blue-300 p-2 rounded-lg hover:text-black ">
                     <Link to={`/update-product/${_id}`} title="Edit" >

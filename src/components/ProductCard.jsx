@@ -1,3 +1,4 @@
+import {  Slide } from "react-awesome-reveal";
 import { IoMdStar } from "react-icons/io";
 import { Link } from "react-router-dom";
 
@@ -5,7 +6,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
     const { _id, photo, item_name, price, rating, quantity, category } = product;
     return (
-        <div>
+        <Slide direction="up">
             <div className="card bg-base-200 w-96 md:w-auto flex ">
                 <figure className="px-10 pt-10 hover:scale-120 transition delay-75 duration-300 ">
                     <img
@@ -24,7 +25,7 @@ const ProductCard = ({ product }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Slide>
     );
 };
 

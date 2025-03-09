@@ -1,3 +1,4 @@
+import { Slide } from "react-awesome-reveal";
 import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -56,7 +57,7 @@ const UpdateProduct = () => {
 
     }
     return (
-        <div>
+        <Slide direction="right">
             <div className="container mx-auto bg-base-200 p-5 lg:py-10 lg:px-20 mt-10">
                 <h1 className="text-5xl text-center mb-5 font-medium">Update {item_name}</h1>
                 <form onSubmit={handleUpdate}>
@@ -113,7 +114,7 @@ const UpdateProduct = () => {
                     </div>
                 </form>
             </div>
-        </div>
+        </Slide>
     );
 };
 

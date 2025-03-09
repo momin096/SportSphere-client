@@ -7,7 +7,8 @@ const Loading = () => {
                 color="#f649ff"
                 size={20}
             /> */}
-            <span className="loading loading-bars loading-xl"></span>
+            {/* <span className="loading loading-bars loading-xl"></span> */}
+            <img src="/loading.gif" alt="" />
         </div>
     );
 };
