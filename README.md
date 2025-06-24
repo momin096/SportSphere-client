@@ -16,7 +16,7 @@ SportSphere is designed to help sports enthusiasts and athletes buy high-quality
 - Hosting: Firebase Hosting
 
 # Live Site 
-- https://sport-sphere-acb69.web.app/
+- [https://sport-sphere-acb69.web.app/](https://sport-sphere-ff210.web.app/)
 
 # 
 
